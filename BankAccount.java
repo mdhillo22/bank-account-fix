@@ -23,9 +23,9 @@ private boolean isActive;
         transactionHistory.add("Withdrawal: -" + amount);
     }
     
-    public void deposit(double amount) {
-        amount += amount * 0.01;  // Add 1% interest
-        balance += amount;
-        transactionHistory.add("Deposit (with interest): +" + amount);
-    }
+    // public void deposit(double amount) {
+    //     amount += amount * 0.01;  // Add 1% interest
+    //     balance += amount;
+    //     transactionHistory.add("Deposit (with interest): +" + amount);
+    // }
 }
