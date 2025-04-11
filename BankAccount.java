@@ -14,14 +14,18 @@ private boolean isActive;
         this.isActive = true; 
     } 
  
- 
-    public void withdraw(double amount) { 
-        balance -= amount;   
-        transactionHistory.add("Withdrawal: -" + amount); 
-    } 
- 
-    public void deposit(double amount) { 
-        balance += amount;   
-        transactionHistory.add("Deposit: +" + amount); 
-    } 
-} 
+    public void withdraw(double amount) {
+        if (balance == 0) {
+            System.out.println("Cannot withdraw, balance is zero.");
+            return;
+        }
+        balance -= amount;
+        transactionHistory.add("Withdrawal: -" + amount);
+    }
+    
+    public void deposit(double amount) {
+        amount += amount * 0.01;  // Add 1% interest
+        balance += amount;
+        transactionHistory.add("Deposit (with interest): +" + amount);
+    }
+}
